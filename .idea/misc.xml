@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/pdfViewer/src/main/res/drawable/divider.xml" value="0.18645833333333334" />
+        <entry key="app/pdfViewer/src/main/res/drawable/page_counter.xml" value="0.18645833333333334" />
+        <entry key="app/pdfViewer/src/main/res/layout/activity_pdf_viewer.xml" value="0.7298387096774194" />
+        <entry key="app/pdfViewer/src/main/res/menu/menu.xml" value="0.1703125" />
+        <entry key="app/src/main/res/drawable-nodpi/divider.xml" value="0.18645833333333334" />
+        <entry key="app/src/main/res/drawable-nodpi/page_counter.xml" value="0.18645833333333334" />
+        <entry key="app/src/main/res/layout/absence_recycler_list_item.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/acitivity_parent_essential_sublist.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/acitivity_parent_essential_sublist_new.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/acticity_cca_category_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_cca.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_cca_review.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_cca_review_after_submit.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_cca_selection.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_chatterbox_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_chatterbox_list_new.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_classrepresentative_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_coming_up.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_facility_grid.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_fbshare.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_home_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_leave_detailpage.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_locate_busroutes.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_nas_today_detail_web_view_new.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_news_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_newslettercategory_layout.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_parents_association_firstpage.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_parents_evening_calendar.xml" value="0.9233870967741935" />
+        <entry key="app/src/main/res/layout/activity_parents_evening_time_slot.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_participation_recyclerview.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_pdf_view_new.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_pdf_viewer.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_pdfview.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_pdfview2.xml" value="0.2707275803722504" />
+        <entry key="app/src/main/res/layout/activity_photo_viewpager.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_sports_event_detail.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_sports_event_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_staff_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_staffdirectory_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_terms_of_service.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_termscalendar_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_tutorial.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_view_aboutus.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/activity_youtube.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_category_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_category_item.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_final_review.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_first_list.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_review_after_submit.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_cca_review_attendancelist.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_ccalist_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/adapter_review_appointments.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/alert_dialogue_layout.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/alert_send_email_dialog.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/assentmentlink_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/assentmentsublistlink_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/audio_player_push_activity.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/audio_push.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/comingup_detailweb_view_layout.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/common_header_single.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/common_header_single_withviewline.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/confirmation_layout_dialog.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_aboutus_list_adapter.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/custom_action_view_home.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_adapter_busroute_list_item.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_adapter_contact_us.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_adapter_pushlist_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custom_adapter_pushlist_item_new.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custom_adapter_sports_event_list_item.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_adapter_stafflist_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/custom_alert_dialog.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_dialog_changepassword.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_dialog_listview.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_list_adapter.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_naisup_grid.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_notice_list_adapter.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custom_pdf_adapter_row.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/custome_layout_alert_scroll.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/dialog_student_media_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_aboutus_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_absence_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_calendar_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_calendar_list_item.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_calendar_list_new.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_calendar_webview.xml" value="0.17" />
+        <entry key="app/src/main/res/layout/fragment_ccas_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_communications_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_contact_us.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_early_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_gallery_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_home_screen.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_home_screen_new.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/fragment_ibprogramme_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_naeprogrammes_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_nastoday_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_notification_list.xml" value="0.14492753623188406" />
+        <entry key="app/src/main/res/layout/fragment_notifications_new.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_parent_essentials_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_parent_evening_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_performingart_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_primary_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_room_list_adapter.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_secondary_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_settings_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_social_media.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_social_media_adapter.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_sportspdf_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_staff_list_adapter.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_student_list_adapter.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragmentparentsactivityrecyclerview.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/layout_calendar_events_listitem.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/layout_imagepager_adapter.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/layout_photo_imagepager_adapter.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/list_item_pdf_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/pdf_rendererview.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/pdf_view_tool_bar.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/text_push.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/acton_bar_header.xml" value="0.1675925925925926" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.1675925925925926" />
+        <entry key="app/src/main/res/xml/path.xml" value="0.10371376811594203" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/relSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/time_icon"
+            android:id="@+id/imagicon"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+          />
+
+<!--
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/time_icon"
+            app:siBorderWidth="1dp"
+            android:id="@+id/imagicon"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
+            app:siBorderColor="#A0DAE5"/>
+-->
+        <com.mobatia.nasmanila.manager.CustomFontSansProTextBlack
+            android:id="@+id/listTxtTitle"
+            style="@style/textstyleblackrooms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:text="NAIS MANILA"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/imagicon"
+            android:singleLine="true" />
+
+
+        <com.mobatia.nasmanila.manager.CustomFontSansProTextWhiteWithoutColor
+            android:id="@+id/listTxtClass"
+            style="@style/textstyleblackrooms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/listTxtTitle"
+            android:text="NAIS MANILA"
+            android:textColor="@color/grey"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@+id/imagicon"
+            android:singleLine="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
