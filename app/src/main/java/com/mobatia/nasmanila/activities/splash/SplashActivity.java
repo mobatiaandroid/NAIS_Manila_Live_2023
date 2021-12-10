@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import androidx.core.app.ActivityCompat;
+
+import android.util.Log;
 import android.widget.Toast;
 
 import com.mobatia.nasmanila.R;
@@ -141,6 +143,7 @@ return true;
 
             @Override
             public void run() {
+                Log.e("userid",PreferenceManager.getUserId(mContext));
                 startService(new Intent(getBaseContext(), OnClearFromRecentService.class));
                 if (PreferenceManager.getIsFirstLaunch(mContext)&& PreferenceManager.getUserId(mContext).equals("")) {
                     Intent tutorialIntent = new Intent(mContext,

@@ -28,7 +28,7 @@
         android:id="@+id/versionText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="V 2.4"
+        android:text="V 2.5"
         android:layout_margin="5dp"
         android:layout_alignParentBottom="true"
         android:gravity="center"

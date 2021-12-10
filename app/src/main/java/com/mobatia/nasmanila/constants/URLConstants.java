@@ -17,7 +17,7 @@ public interface URLConstants {
 //Dev NAIS MANILA
 
 //	public String POST_APITOKENURL="http://mobicare2.mobatia.com/nais_manila/oauth/access_token";
-//	public String URL_HEAD = "http://mobicare2.mobatia.com/nais_manila/api/";
+////	public String URL_HEAD = "http://mobicare2.mobatia.com/nais_manila/api/";
 //	public String URL_HEAD = "http://alpha.mobatia.in:808/nais_manila/";
 
 //Live NAIS MANILA

@@ -132,42 +132,46 @@ if(!mStaffList.get(position).getStaffImage().equals("")){
                 System.out.println("click on mail--");
                 if(!PreferenceManager.getUserId(mContext).equals("")) {
                      dialog = new Dialog(mContext);
+//                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//
+//                    dialog.setContentView(R.layout.alert_send_email_dialog);
+//                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                    dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+//
+//                    Button dialogCancelButton = (Button) dialog.findViewById(R.id.cancelButton);
+//                    Button submitButton = (Button) dialog.findViewById(R.id.submitButton);
+//                    text_dialog = (EditText) dialog.findViewById(R.id.text_dialog);
+//                    text_content = (EditText) dialog.findViewById(R.id.text_content);
                     dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
                     dialog.setContentView(R.layout.alert_send_email_dialog);
                     dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-
                     Button dialogCancelButton = (Button) dialog.findViewById(R.id.cancelButton);
-                    Button submitButton = (Button) dialog.findViewById(R.id.submitButton);
-                    text_dialog = (EditText) dialog.findViewById(R.id.text_dialog);
-                    text_content = (EditText) dialog.findViewById(R.id.text_content);
+                    Button submitButton= (Button) dialog.findViewById(R.id.submitButton);
+                    text_dialog= (EditText) dialog.findViewById(R.id.text_dialog);
+                    text_content= (EditText) dialog.findViewById(R.id.text_content);
+//                    text_dialog.setFocusable(true);
+                    text_dialog.setFocusableInTouchMode(true);
+                    text_content.setFocusableInTouchMode(true);
                     // text_dialog.setSelection(0);
                     //text_content.setSelection(0);
-                    text_dialog.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                        @Override
-                        public void onFocusChange(View v, boolean hasFocus) {
-                            if (hasFocus) {
-                                text_dialog.setHint("");
-                                text_dialog.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-                                text_dialog.setPadding(5, 5, 0, 0);
-                            } else {
-                                text_dialog.setHint("Enter your subject here...");
+                    text_dialog.setOnFocusChangeListener((v12, hasFocus) -> {
+                        if (hasFocus) {
+                            text_dialog.setHint("");
+                            text_dialog.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+                            text_dialog.setPadding(5, 5, 0, 0);
+                        } else {
+                            text_dialog.setHint("Enter your subject here...");
 
-                                text_dialog.setGravity(Gravity.CENTER);
+                            text_dialog.setGravity(Gravity.CENTER);
 
-                            }
                         }
                     });
-                    text_content.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                        @Override
-                        public void onFocusChange(View v, boolean hasFocus) {
-                            if (hasFocus) {
-                                text_content.setGravity(Gravity.LEFT);
-                            } else {
-                                text_content.setGravity(Gravity.CENTER);
+                    text_content.setOnFocusChangeListener((v1, hasFocus) -> {
+                        if (hasFocus) {
+                            text_content.setGravity(Gravity.LEFT);
+                        } else {
+                            text_content.setGravity(Gravity.CENTER);
 
-                            }
                         }
                     });
                     dialogCancelButton.setOnClickListener(new View.OnClickListener() {

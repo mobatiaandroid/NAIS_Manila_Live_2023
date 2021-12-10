@@ -74,6 +74,7 @@ public class ParentsEveningFragment extends Fragment implements
     private String mStudentName="";
     private String mStaffName="";
     private String mClass="";
+    private String staffEmail="";
     private RelativeLayout staffRelative,studentRelative,relMain;
     private ImageView selectStaffImgView,selectStudentImgView,next,infoImg,reviewImageView;
     TextView mTitleTextView,studentNameTV,staffNameTV,contactTeacher;
@@ -247,19 +248,19 @@ public class ParentsEveningFragment extends Fragment implements
                         @Override
                         public void onClick(View v) {
                             System.out.println("submit btn clicked");
-                           /* if (AppUtils.isNetworkConnected(mContext)) {
-                                if (text_content.equals("")) {
-                                    AppUtils.setErrorForEditText(text_content, mContext.getString(R.string.mandatory_field));
-                                } else if (text_dialog.equals("")) {
-                                    AppUtils.setErrorForEditText(text_dialog, mContext.getString(R.string.mandatory_field));
-
-                                } else {
-                                    sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF);
-                                }
-                            } else {
-                                AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", mContext.getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);
-
-                            }*/
+//                            if (AppUtils.isNetworkConnected(mContext)) {
+//                                if (text_content.equals("")) {
+//                                    AppUtils.setErrorForEditText(text_content, mContext.getString(R.string.mandatory_field));
+//                                } else if (text_dialog.equals("")) {
+//                                    AppUtils.setErrorForEditText(text_dialog, mContext.getString(R.string.mandatory_field));
+//
+//                                } else {
+//                                    sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF_PTA);
+//                                }
+//                            } else {
+//                                AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", mContext.getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);
+//
+//                            }
                             if (text_dialog.getText().equals("")) {
                                 AppUtils.showDialogAlertDismiss((Activity) mContext, mContext.getString(R.string.alert_heading), "Please enter subject", R.drawable.exclamationicon, R.drawable.round);
 
@@ -269,7 +270,7 @@ public class ParentsEveningFragment extends Fragment implements
                             } else {
                                 if (AppUtils.isNetworkConnected(mContext)) {
                                     System.out.println("student id"+mStudentId+"staff id"+mStaffId);
-                                    //sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF_PTA);
+                                    sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF_PTA);
 
                                 } else {
                                     AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", mContext.getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);
@@ -615,6 +616,7 @@ public class ParentsEveningFragment extends Fragment implements
                         staffNameTV.setText(mListViewStaffArray.get(position).getmName());
                         mStaffId= mListViewStaffArray.get(position).getmId();
                         mStaffName= mListViewStaffArray.get(position).getmName();
+                        mStaffName= mListViewStaffArray.get(position).getmName();
                         if (!mListViewStaffArray.get(position).getmPhoto().equals("")) {
 
                             Picasso.with(mContext).load(AppUtils.replace(mListViewStaffArray.get(position).getmPhoto().toString())).placeholder(R.drawable.staff).error(R.drawable.staff).fit().into(selectStaffImgView);
@@ -683,7 +685,7 @@ public class ParentsEveningFragment extends Fragment implements
                             public void tokenrenewed() {
                             }
                         });
-                        sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF);
+                        sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF_PTA);
 
                     } else {
 

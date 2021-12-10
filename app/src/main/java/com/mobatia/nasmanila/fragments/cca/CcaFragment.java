@@ -276,6 +276,7 @@ public class CcaFragment extends Fragment implements OnItemClickListener,
 						} else {
 							if (AppUtils.isNetworkConnected(mContext)) {
 								sendEmailToStaff(URL_SEND_EMAIL_TO_STAFF);
+								dialog.dismiss();
 
 							} else {
 								AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", mContext.getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);

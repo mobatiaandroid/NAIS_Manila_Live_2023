@@ -83,10 +83,11 @@
         <entry key="app/src/main/res/layout/custom_naisup_grid.xml" value="0.10371376811594203" />
         <entry key="app/src/main/res/layout/custom_notice_list_adapter.xml" value="0.10371376811594203" />
         <entry key="app/src/main/res/layout/custom_pdf_adapter_row.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/customadapter_staffdept_listitem.xml" value="0.33" />
         <entry key="app/src/main/res/layout/custome_layout_alert_scroll.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_student_media_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_aboutus_list.xml" value="0.10778985507246377" />
-        <entry key="app/src/main/res/layout/fragment_absence_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_absence_list.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_calendar_list.xml" value="0.10778985507246377" />
         <entry key="app/src/main/res/layout/fragment_calendar_list_item.xml" value="0.10778985507246377" />
         <entry key="app/src/main/res/layout/fragment_calendar_list_new.xml" value="0.10778985507246377" />
@@ -105,7 +106,7 @@
         <entry key="app/src/main/res/layout/fragment_notification_list.xml" value="0.14492753623188406" />
         <entry key="app/src/main/res/layout/fragment_notifications_new.xml" value="0.10778985507246377" />
         <entry key="app/src/main/res/layout/fragment_parent_essentials_list.xml" value="0.10778985507246377" />
-        <entry key="app/src/main/res/layout/fragment_parent_evening_list.xml" value="0.10778985507246377" />
+        <entry key="app/src/main/res/layout/fragment_parent_evening_list.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_performingart_list.xml" value="0.10778985507246377" />
         <entry key="app/src/main/res/layout/fragment_primary_list.xml" value="0.10778985507246377" />
         <entry key="app/src/main/res/layout/fragment_room_list_adapter.xml" value="0.10778985507246377" />
@@ -120,6 +121,7 @@
         <entry key="app/src/main/res/layout/layout_calendar_events_listitem.xml" value="0.10371376811594203" />
         <entry key="app/src/main/res/layout/layout_imagepager_adapter.xml" value="0.10371376811594203" />
         <entry key="app/src/main/res/layout/layout_photo_imagepager_adapter.xml" value="0.10371376811594203" />
+        <entry key="app/src/main/res/layout/leave_request_submission_activity.xml" value="0.25" />
         <entry key="app/src/main/res/layout/list_item_pdf_page.xml" value="0.1" />
         <entry key="app/src/main/res/layout/pdf_rendererview.xml" value="0.33" />
         <entry key="app/src/main/res/layout/pdf_view_tool_bar.xml" value="0.33" />

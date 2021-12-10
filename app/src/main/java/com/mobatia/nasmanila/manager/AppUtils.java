@@ -1152,7 +1152,9 @@ public class AppUtils implements JSONConstants,URLConstants,NameValueConstants,S
 		VolleyWrapper volleyWrapper = new VolleyWrapper(URL_LOGOUT);
 		String[] name = {"access_token", "users_id",JTAG_DEVICE_iD,JTAG_DEVICE_tYPE};
 		String[] value = {PreferenceManager.getAccessToken(mActivity), PreferenceManager.getUserId(mActivity),FirebaseInstanceId.getInstance().getToken(), "2"};
-
+		Log.e("Access token", PreferenceManager.getAccessToken(mActivity));
+		Log.e("userid", PreferenceManager.getUserId(mActivity));
+		Log.e("firebase",FirebaseInstanceId.getInstance().getToken());
 		//String[] value={PreferenceManager.getAccessToken(mContext),mStaffList.get(pos).getStaffEmail(),JTAG_USERS_ID_VALUE,text_dialog.getText().toString(),text_content.getText().toString()};
 		volleyWrapper.getResponsePOST(mActivity, 11, name, value, new VolleyWrapper.ResponseListener() {
 			@Override
