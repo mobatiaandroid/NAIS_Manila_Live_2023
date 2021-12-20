@@ -29,6 +29,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
@@ -52,6 +53,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.home.adapter.HomeListAdapter;
 import com.mobatia.nasmanila.constants.CacheDIRConstants;
@@ -224,7 +226,8 @@ public class HomeListAppCompatActivity extends AppCompatActivity implements
         linearLayout.setLayoutParams(params);
         mHomeListView.setOnItemClickListener(this);
 //        mHomeListView.setOnItemLongClickListener(this);
-
+        String firebaseID = FirebaseInstanceId.getInstance().getToken();
+//        Log.e("ID",firebaseID);
         mDetector = new GestureDetector(this);
         mDrawerToggle = new ActionBarDrawerToggle((Activity) mContext,
                 mDrawerLayout, R.drawable.hamburgerbtn, R.string.null_value,

@@ -143,7 +143,7 @@ return true;
 
             @Override
             public void run() {
-                Log.e("userid",PreferenceManager.getUserId(mContext));
+//                Log.e("userid",PreferenceManager.getUserId(mContext));
                 startService(new Intent(getBaseContext(), OnClearFromRecentService.class));
                 if (PreferenceManager.getIsFirstLaunch(mContext)&& PreferenceManager.getUserId(mContext).equals("")) {
                     Intent tutorialIntent = new Intent(mContext,

@@ -193,9 +193,11 @@ public class NotificationsFragmentNew extends Fragment implements
                         if (pushNotificationArrayList.get(position).getType().equalsIgnoreCase("Image")) {
                             mIntent = new Intent(mContext, ImageActivity.class);
                             mIntent.putExtra(POSITION, position);
-                            mIntent.putExtra("message", pushNotificationArrayList.get(position).getMessage());
-                            mIntent.putExtra("date", pushNotificationArrayList.get(position).getDate());
-                            mIntent.putExtra("url", pushNotificationArrayList.get(position).getUrl());
+//                            mIntent.putExtra("message", pushNotificationArrayList.get(position).getMessage());
+//                            Log.e("here",pushNotificationArrayList.get(position).getMessage().toString());
+//                            mIntent.putExtra("date", pushNotificationArrayList.get(position).getDate());
+//                            mIntent.putExtra("url", pushNotificationArrayList.get(position).getUrl());
+                            mIntent.putExtra(PASS_ARRAY_LIST, pushNotificationArrayList);
                             mContext.startActivity(mIntent);
                         }
                         if (pushNotificationArrayList.get(position).getType().equalsIgnoreCase("Voice")) {
@@ -262,7 +264,6 @@ public class NotificationsFragmentNew extends Fragment implements
                                     if (dataArray.length() > 0) {
                                         notificationSize = dataArray.length();
                                         for (int i = 0; i < dataArray.length(); i++) {
-                                            Log.e("DataArray", String.valueOf(dataArray));
                                             JSONObject dataObject = dataArray.getJSONObject(i);
                                             if (pushNotificationArrayList.size() == 0) {
                                                 Log.e("NotificationmodelItem", String.valueOf(getSearchValues(dataObject).getDate()));
