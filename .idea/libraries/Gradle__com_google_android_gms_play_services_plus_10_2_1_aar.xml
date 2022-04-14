@@ -4,6 +4,12 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1461a6c5a1bc0ed068d5619dc600827/jetified-play-services-plus-10.2.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1461a6c5a1bc0ed068d5619dc600827/jetified-play-services-plus-10.2.1/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1461a6c5a1bc0ed068d5619dc600827/jetified-play-services-plus-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3db2d137a4ae20530776db332309b844/jetified-play-services-plus-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3db2d137a4ae20530776db332309b844/jetified-play-services-plus-10.2.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3db2d137a4ae20530776db332309b844/jetified-play-services-plus-10.2.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7e27928fc031bf4bb3b0eb6d3966554/jetified-play-services-plus-10.2.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7e27928fc031bf4bb3b0eb6d3966554/jetified-play-services-plus-10.2.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f7e27928fc031bf4bb3b0eb6d3966554/jetified-play-services-plus-10.2.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

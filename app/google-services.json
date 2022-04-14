@@ -1,39 +1,44 @@
 {
   "project_info": {
-    "project_number": "477011031336",
-    "firebase_url": "https://nas-manila.firebaseio.com",
-    "project_id": "nas-manila",
-    "storage_bucket": "nas-manila.appspot.com"
+    "project_number": "808713614223",
+    "project_id": "nais-manila",
+    "storage_bucket": "nais-manila.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:477011031336:android:685c0fafd1027e0b",
+        "mobilesdk_app_id": "1:808713614223:android:cb3cf385c38e60e5c7d1fa",
         "android_client_info": {
           "package_name": "com.mobatia.nasmanila"
         }
       },
       "oauth_client": [
         {
-          "client_id": "477011031336-csvc6e86uqevbgjp6gp0r851jc21h2kc.apps.googleusercontent.com",
+          "client_id": "808713614223-92bcjeu6ut6dccsm0i83bcmmvti3l70i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCKPCJYsfWa2KV1MFo2l6XQo6ACc7PrC-8"
+          "current_key": "AIzaSyCC79eunbiySHkUEJMP8dpKGMcfX13_Bws"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808713614223-92bcjeu6ut6dccsm0i83bcmmvti3l70i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "808713614223-es49oa6ujsgfvsr5d6piblgv2c8f43fp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mobatia.NAISManila",
+                "app_store_id": "1447087546"
+              }
+            }
+          ]
         }
       }
     }

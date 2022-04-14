@@ -8,10 +8,12 @@ import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.TaskStackBuilder;
 import android.util.Log;
 import android.view.LayoutInflater;
+
+import androidx.annotation.RequiresApi;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.TaskStackBuilder;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -40,6 +42,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * @param remoteMessage Object representing the message received from Firebase Cloud Messaging.
      */
     // [START receive_message]
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
@@ -63,6 +66,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             try {
                 JSONObject json = new JSONObject(remoteMessage.getData().toString());
                 handleDataMessage(json);
+
+                // to check if message key in data has value or not
+//                String message = remoteMessage.getData().getOrDefault("message", "Empty");
+//                sendNotification(message);
             } catch (Exception e) {
                 Log.e(TAG, "Exception: " + e.getMessage());
             }

@@ -640,15 +640,21 @@
         <service
             android:name=".service.OnClearFromRecentService"
             android:stopWithTask="false" /> <!-- [START firebase_service] -->
-        <service
-            android:name=".fcmservice.MyFirebaseMessagingService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service> <!-- [END firebase_service] -->
+
+        <!-- [END firebase_service] -->
+
+<!--        <service-->
+<!--            android:name=".fcmservice.FirebaseMessaging"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="com.google.firebase.MESSAGING_EVENT" />-->
+<!--            </intent-filter>-->
+<!--        </service>-->
+
+
         <!-- [START firebase_iid_service] -->
+
         <service android:name=".fcmservice.MyFirebaseInstanceIDService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
