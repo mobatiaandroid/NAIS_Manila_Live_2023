@@ -1,8 +1,12 @@
 package com.mobatia.nasmanila.fcmservice;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
+
 /*** Class not used **/
+
+
 public class FirebaseMessaging extends FirebaseMessagingService {
+
 //    private static final String TAG = "MyFirebaseMsgService";
 //    Intent intent;
 //    LayoutInflater mInflater;
