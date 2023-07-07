@@ -1,15 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.JakeWharton:ViewPagerIndicator:2.4.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/330a8a47554eb9b33d598de8849a8f3c/jetified-ViewPagerIndicator-2.4.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/330a8a47554eb9b33d598de8849a8f3c/jetified-ViewPagerIndicator-2.4.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/330a8a47554eb9b33d598de8849a8f3c/jetified-ViewPagerIndicator-2.4.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e1105c8bcbf96f1e916fe1511465c/jetified-ViewPagerIndicator-2.4.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e1105c8bcbf96f1e916fe1511465c/jetified-ViewPagerIndicator-2.4.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/822e1105c8bcbf96f1e916fe1511465c/jetified-ViewPagerIndicator-2.4.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/63673df8eeb931fd4218ffbfdfd16c12/jetified-ViewPagerIndicator-2.4.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/63673df8eeb931fd4218ffbfdfd16c12/jetified-ViewPagerIndicator-2.4.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/63673df8eeb931fd4218ffbfdfd16c12/jetified-ViewPagerIndicator-2.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8d27c107a6b19346aa83b80afaeddf2/jetified-ViewPagerIndicator-2.4.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8d27c107a6b19346aa83b80afaeddf2/jetified-ViewPagerIndicator-2.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f8d27c107a6b19346aa83b80afaeddf2/jetified-ViewPagerIndicator-2.4.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.JakeWharton/ViewPagerIndicator/2.4.1/955ad71f0af3cf4bb60bb9bc252c2020c1af4aae/ViewPagerIndicator-2.4.1-javadoc.jar!/" />

@@ -9,9 +9,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -23,12 +20,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.bumptech.glide.Glide;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.cca.CCA_Activity;
 import com.mobatia.nasmanila.activities.home.HomeListAppCompatActivity;
 import com.mobatia.nasmanila.activities.pdf.PDFViewActivity;
-import com.mobatia.nasmanila.activities.pdf.PdfViewActivityNew;
 import com.mobatia.nasmanila.activities.web_view.LoadUrlWebViewActivity;
 import com.mobatia.nasmanila.constants.CacheDIRConstants;
 import com.mobatia.nasmanila.constants.IntentPassValueConstants;
@@ -107,13 +106,7 @@ public class CcaActivity extends Activity implements AdapterView.OnItemClickList
         headermanager.setButtonLeftSelector(R.drawable.back,
                 R.drawable.back);
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                finish();
-            }
-        });
+        back.setOnClickListener(v -> finish());
 //		mListView = (ListView) mRootView.findViewById(R.id.mListView);
         bannerImagePager= (ImageView)findViewById(R.id.bannerImagePager);
         mListView = (RecyclerView)findViewById(R.id.mListView);

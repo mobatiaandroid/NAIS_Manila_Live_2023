@@ -7,12 +7,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,15 +14,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.notificationssplitting.AudioPlayerViewActivityNew;
 import com.mobatia.nasmanila.activities.notificationssplitting.ImageActivityNew;
@@ -123,6 +118,7 @@ public class NotificationsFragment extends Fragment implements
 
 //		setHasOptionsMenu(true);
         mContext = getActivity();
+        Log.e("token",PreferenceManager.getFCMID(mContext));
         myFormatCalender = "yyyy-MM-dd HH:mm:ss";
         sdfcalender = new SimpleDateFormat(myFormatCalender, Locale.ENGLISH);
 //		Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(mContext));
@@ -294,15 +290,15 @@ public class NotificationsFragment extends Fragment implements
         try {
             final VolleyWrapper manager = new VolleyWrapper(URL);
             jtagAccesstoken = PreferenceManager.getAccessToken(mContext);
-            jtagDeviceid = FirebaseInstanceId.getInstance().getToken();
+            jtagDeviceid = PreferenceManager.getFCMID(mContext);
             jtagDevicetype = "2";
             notificationSize = 0;
-            Log.e("firbase", FirebaseInstanceId.getInstance().getToken());
+            Log.e("firbase", PreferenceManager.getFCMID(mContext));
             Log.e("userid", PreferenceManager.getUserId(mContext));
             jtagUsersId = PreferenceManager.getUserId(mContext);
             String[] name = {JTAG_ACCESSTOKEN, JTAG_DEVICE_iD, JTAG_DEVICE_tYPE, JTAG_USERS_ID, JTAG_PAGE_FROM, JTAG_SCROLL_TO};
-            String[] value = {PreferenceManager.getAccessToken(mContext), FirebaseInstanceId.getInstance().getToken(), jtagDevicetype, PreferenceManager.getUserId(mContext), page_from, scroll_to};
-            System.out.println("Notificationpassing:" + "A:" + PreferenceManager.getAccessToken(mContext) + "DID:" + FirebaseInstanceId.getInstance().getToken() + "DTYPE:" + jtagDevicetype + "UID:" + PreferenceManager.getUserId(mContext) + "PAGEFROM:" + page_from + "Scrollto:" + scroll_to);
+            String[] value = {PreferenceManager.getAccessToken(mContext), PreferenceManager.getFCMID(mContext), jtagDevicetype, PreferenceManager.getUserId(mContext), page_from, scroll_to};
+            System.out.println("Notificationpassing:" + "A:" + PreferenceManager.getAccessToken(mContext) + "DID:" + PreferenceManager.getFCMID(mContext) + "DTYPE:" + jtagDevicetype + "UID:" + PreferenceManager.getUserId(mContext) + "PAGEFROM:" + page_from + "Scrollto:" + scroll_to);
             manager.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
                 @Override
                 public void responseSuccess(String successResponse) {

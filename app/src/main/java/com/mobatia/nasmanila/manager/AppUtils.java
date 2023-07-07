@@ -26,6 +26,7 @@ import android.provider.Settings;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Display;
@@ -38,10 +39,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.login.LoginActivity;
 import com.mobatia.nasmanila.constants.JSONConstants;
@@ -185,7 +184,7 @@ public class AppUtils implements JSONConstants,URLConstants,NameValueConstants,S
 
 			final VolleyWrapper manager = new VolleyWrapper(URL_DEVICE_REGISTRATION);
 			String[] name = {JTAG_ACCESSTOKEN,JTAG_DEVICE_ID,JTAG_DEVICE_TYPE};
-			String[] value = {PreferenceManager.getAccessToken(mContext),FirebaseInstanceId.getInstance().getToken(), "2"};
+			String[] value = {PreferenceManager.getAccessToken(mContext),PreferenceManager.getFCMID(mContext), "2"};
 			manager.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
 
 				@Override
@@ -1150,11 +1149,21 @@ public class AppUtils implements JSONConstants,URLConstants,NameValueConstants,S
 	}
 	private static void callLogoutApi(final Activity mActivity,final Dialog dialog) {
 		VolleyWrapper volleyWrapper = new VolleyWrapper(URL_LOGOUT);
+		final String[] fToken = {""};
+		FirebaseMessaging.getInstance().getToken().addOnSuccessListener(token -> {
+			if (!TextUtils.isEmpty(token)) {
+				Log.d("Token", "retrieve token successful : " + token);
+				fToken[0] = token;
+				PreferenceManager.setFCMID(mActivity,token);
+			} else{
+				Log.w("Token", "token should not be null...");
+			}
+		});
 		String[] name = {"access_token", "users_id",JTAG_DEVICE_iD,JTAG_DEVICE_tYPE};
-		String[] value = {PreferenceManager.getAccessToken(mActivity), PreferenceManager.getUserId(mActivity),FirebaseInstanceId.getInstance().getToken(), "2"};
+		String[] value = {PreferenceManager.getAccessToken(mActivity), PreferenceManager.getUserId(mActivity),fToken[0], "2"};
 		Log.e("Access token", PreferenceManager.getAccessToken(mActivity));
 		Log.e("userid", PreferenceManager.getUserId(mActivity));
-		Log.e("firebase",FirebaseInstanceId.getInstance().getToken());
+		Log.e("firebase",PreferenceManager.getFCMID(mActivity));
 		//String[] value={PreferenceManager.getAccessToken(mContext),mStaffList.get(pos).getStaffEmail(),JTAG_USERS_ID_VALUE,text_dialog.getText().toString(),text_content.getText().toString()};
 		volleyWrapper.getResponsePOST(mActivity, 11, name, value, new VolleyWrapper.ResponseListener() {
 			@Override

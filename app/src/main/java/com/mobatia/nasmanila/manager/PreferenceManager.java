@@ -1504,20 +1504,23 @@ public class PreferenceManager implements NaisTabConstants {
 
     }
 
-    public static void setFireBaseId(Context context, String id) {
-        SharedPreferences prefs = context.getSharedPreferences(SHARED_PREF_NAS,
-                Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("firebase id", id);
-        editor.commit();
+
+    public static void setFCMID(Context context, String id){
+        SharedPreferences preferences = context.getSharedPreferences(SHARED_PREF_NAS,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("fcm_id",id);
+        editor.apply();
+    }
+    public static String getFCMID(Context context){
+        String fcm_id = "";
+        SharedPreferences preferences = context.getSharedPreferences(SHARED_PREF_NAS, Context.MODE_PRIVATE);
+        fcm_id = preferences.getString("fcm_id","").toString();
+        return fcm_id;
     }
 
-    public static String getFireBaseId(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(SHARED_PREF_NAS,
-                Context.MODE_PRIVATE);
-        return prefs.getString("firebase id", "0");
 
-    }
+
+
 
     public static String getUserId(Context context) {
         String userid = "";

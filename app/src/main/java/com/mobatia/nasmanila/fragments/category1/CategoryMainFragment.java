@@ -7,9 +7,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,6 +20,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.mobatia.nasmanila.R;
@@ -231,7 +232,7 @@ public class CategoryMainFragment extends Fragment implements
                             if (text_dialog.getText().equals("")) {
                                 AppUtils.showDialogAlertDismiss((Activity) mContext, mContext.getString(R.string.alert_heading), "Please enter  subject", R.drawable.exclamationicon, R.drawable.round);
 
-                            } else if (text_content.getText().toString().equals("")) {
+                            } else if (text_content.geztText().toString().equals("")) {
                                 AppUtils.showDialogAlertDismiss((Activity) mContext, mContext.getString(R.string.alert_heading), "Please enter  content", R.drawable.exclamationicon, R.drawable.round);
 
                             } else {

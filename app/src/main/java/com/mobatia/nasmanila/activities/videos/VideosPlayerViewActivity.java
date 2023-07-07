@@ -10,10 +10,11 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import androidx.core.app.NotificationCompat;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
 
 import com.mobatia.nasmanila.R;
 
@@ -205,7 +206,7 @@ public class VideosPlayerViewActivity extends Activity {
             PendingIntent pIntent = PendingIntent.getActivity(activity, 0, intent, 0);
             mBuilder.setContentTitle(fileName)
                     .setContentText("Download completed")
-                    .setSmallIcon(R.drawable.cast_ic_notification_small_icon)
+                    .setSmallIcon(R.drawable.notifyicon)
                     .setProgress(0, 0, false)
                     .setContentIntent(pIntent);
             mNotifyManager.notify(id, mBuilder.build());
@@ -246,7 +247,7 @@ public class VideosPlayerViewActivity extends Activity {
             mBuilder = new NotificationCompat.Builder(activity);
             mBuilder.setContentTitle(fileName)
                     .setContentText("Download in progress.")
-                    .setSmallIcon(R.drawable.cast_ic_notification_small_icon);}
+                    .setSmallIcon(R.drawable.notifyicon);}
 
 //        @Override
 //        protected void onProgressUpdate(String... values) {

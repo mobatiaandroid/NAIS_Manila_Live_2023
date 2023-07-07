@@ -17,18 +17,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import androidx.annotation.NonNull;
-import androidx.legacy.app.ActionBarDrawerToggle;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
@@ -47,13 +36,25 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.legacy.app.ActionBarDrawerToggle;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.home.adapter.HomeListAdapter;
 import com.mobatia.nasmanila.constants.CacheDIRConstants;
@@ -67,7 +68,6 @@ import com.mobatia.nasmanila.fragments.category1.CategoryMainFragment;
 import com.mobatia.nasmanila.fragments.contact_us.ContactUsFragment;
 import com.mobatia.nasmanila.fragments.home.HomeScreenGuestUserFragment;
 import com.mobatia.nasmanila.fragments.home.HomeScreenRegisteredUserFragment;
-import com.mobatia.nasmanila.fragments.notifications.NotificationsFragment;
 import com.mobatia.nasmanila.fragments.notifications_new.NotificationsFragmentNew;
 import com.mobatia.nasmanila.fragments.parent_essentials.ParentEssentialsFragment;
 import com.mobatia.nasmanila.fragments.parents_evening.ParentsEveningFragment;
@@ -77,10 +77,7 @@ import com.mobatia.nasmanila.manager.AppUtils;
 import com.mobatia.nasmanila.manager.PreferenceManager;
 import com.mobatia.nasmanila.sqliteservice.DatabaseHelper;
 
-
 import java.io.IOException;
-
-import static android.content.Context.MODE_PRIVATE;
 
 
 @SuppressLint("NewApi")
@@ -148,6 +145,14 @@ public class HomeListAppCompatActivity extends AppCompatActivity implements
         }        /*Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this,
                 HomeListActivity.class));*/
         initialiseUI();
+        FirebaseMessaging.getInstance().getToken().addOnSuccessListener(token -> {
+            if (!TextUtils.isEmpty(token)) {
+                Log.d("Token", "retrieve token successful : " + token);
+                PreferenceManager.setFCMID(mContext,token);
+            } else{
+                Log.w("Token", "token should not be null...");
+            }
+        });
         initialSettings();
         // on first time display view for first nav item
 //        displayView(0);
@@ -226,7 +231,7 @@ public class HomeListAppCompatActivity extends AppCompatActivity implements
         linearLayout.setLayoutParams(params);
         mHomeListView.setOnItemClickListener(this);
 //        mHomeListView.setOnItemLongClickListener(this);
-        String firebaseID = FirebaseInstanceId.getInstance().getToken();
+        String firebaseID = PreferenceManager.getFCMID(mContext);
 //        Log.e("ID",firebaseID);
         mDetector = new GestureDetector(this);
         mDrawerToggle = new ActionBarDrawerToggle((Activity) mContext,

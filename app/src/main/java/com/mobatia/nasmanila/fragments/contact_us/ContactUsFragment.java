@@ -13,10 +13,6 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
@@ -34,6 +30,11 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,7 +43,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.staff_directory.StaffDirectoryActivity;
 import com.mobatia.nasmanila.activities.web_view.LoadUrlWebViewActivity;
@@ -285,10 +285,10 @@ public class ContactUsFragment extends Fragment implements OnItemClickListener,
 										mMap.getUiSettings().setZoomControlsEnabled(false);
 
 										LatLng latLng = new LatLng(Double.parseDouble(latitude), Double.parseDouble(longitude));
-										mMap.addMarker(new MarkerOptions()
-												.position(latLng) //setting position
-												.draggable(true) //Making the marker draggable
-												.title("NAIS Manila"));
+//										mMap.addMarker(new MarkerOptions()
+//												.position(latLng) //setting position
+//												.draggable(true) //Making the marker draggable
+//												.title("NAIS Manila"));
 
 
 										//Moving the camera

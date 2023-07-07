@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NASManila.iml" filepath="$PROJECT_DIR$/.idea/modules/NASManila.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NASManila.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NASManila.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giraffeplayer/NASManila.giraffeplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/giraffeplayer/NASManila.giraffeplayer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ijkplayer-java/NASManila.ijkplayer-java.iml" filepath="$PROJECT_DIR$/.idea/modules/ijkplayer-java/NASManila.ijkplayer-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Manila_New.iml" filepath="$PROJECT_DIR$/.idea/modules/Manila_New.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Manila_New.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Manila_New.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Manila_New.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Manila_New.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Manila_New.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Manila_New.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Manila_New.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Manila_New.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.iml" filepath="$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.main.iml" filepath="$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/giraffeplayer/Manila_New.giraffeplayer.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.iml" filepath="$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/ijkplayer-java/Manila_New.ijkplayer-java.unitTest.iml" />
     </modules>
   </component>
 </project>

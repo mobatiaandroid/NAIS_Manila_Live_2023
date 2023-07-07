@@ -12,6 +12,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -26,7 +27,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.home.HomeListAppCompatActivity;
 import com.mobatia.nasmanila.constants.JSONConstants;
@@ -34,7 +35,6 @@ import com.mobatia.nasmanila.constants.URLConstants;
 import com.mobatia.nasmanila.manager.AppUtils;
 import com.mobatia.nasmanila.manager.PreferenceManager;
 import com.mobatia.nasmanila.volleywrappermanager.VolleyWrapper;
-
 
 import org.json.JSONObject;
 
@@ -69,6 +69,19 @@ public class LoginActivity extends Activity implements OnTouchListener,
 		/*AppUtils.hideKeyboardOnTouchOutside(loginMain, mContext,
 				mUserNameEdtTxt);*/
 		setListeners();
+		FirebaseMessaging.getInstance().getToken().addOnSuccessListener(token -> {
+			if (!TextUtils.isEmpty(token)) {
+				Log.e("Token", "retrieve token successful : " + token);
+				PreferenceManager.setFCMID(mContext,token);
+			} else{
+				Log.w("Token", "token should not be null...");
+			}
+		}).addOnFailureListener(e -> {
+			//handle e
+		}).addOnCanceledListener(() -> {
+			//handle cancel
+		}).addOnCompleteListener(task -> Log.e("Token", "This is the token : " + task.getResult()));
+		//}
 	}
 
 	/*******************************************************
@@ -535,7 +548,7 @@ public class LoginActivity extends Activity implements OnTouchListener,
 	private void sendSignUpRequest(String URL) {
 		VolleyWrapper volleyWrapper=new VolleyWrapper(URL);
 		String[] name={"access_token","email","deviceid","devicetype"};
-		String[] value={PreferenceManager.getAccessToken(mContext),mMailEdtText.getText().toString(),FirebaseInstanceId.getInstance().getToken(),"2"};
+		String[] value={PreferenceManager.getAccessToken(mContext),mMailEdtText.getText().toString(),PreferenceManager.getFCMID(mContext),"2"};
 
 		//String[] value={PreferenceManager.getAccessToken(mContext),mStaffList.get(pos).getStaffEmail(),JTAG_USERS_ID_VALUE,text_dialog.getText().toString(),text_content.getText().toString()};
 		volleyWrapper.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
@@ -618,8 +631,8 @@ public class LoginActivity extends Activity implements OnTouchListener,
 	private void LoginApiCall(String URL) {
 		VolleyWrapper volleyWrapper=new VolleyWrapper(URL);
 		String[] name={"access_token","email","password","deviceid","devicetype"};
-		String[] value={PreferenceManager.getAccessToken(mContext),mUserNameEdtTxt.getText().toString(),mPasswordEdtTxt.getText().toString(), FirebaseInstanceId.getInstance().getToken(),"2"};
-        System.out.println(" Device  Id "+FirebaseInstanceId.getInstance().getToken());
+		String[] value={PreferenceManager.getAccessToken(mContext),mUserNameEdtTxt.getText().toString(),mPasswordEdtTxt.getText().toString(), PreferenceManager.getFCMID(mContext),"2"};
+        System.out.println(" Device  Id "+PreferenceManager.getFCMID(mContext));
 		//String[] value={PreferenceManager.getAccessToken(mContext),mStaffList.get(pos).getStaffEmail(),JTAG_USERS_ID_VALUE,text_dialog.getText().toString(),text_content.getText().toString()};
 		volleyWrapper.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
 			@Override
@@ -638,7 +651,7 @@ public class LoginActivity extends Activity implements OnTouchListener,
 								PreferenceManager.setUserId(mContext, respObj.optString(JTAG_USER_ID));
 							PreferenceManager.setUserEmail(mContext,mUserNameEdtTxt.getText().toString());
 							System.out.println("user id---"+PreferenceManager.getUserId(mContext));
-							//}
+
 							showDialogSignUpAlert((Activity) mContext, "Success", getString(R.string.login_success_alert), R.drawable.tick, R.drawable.round);
 
 						}else if(status_code.equalsIgnoreCase("301")){
@@ -742,7 +755,7 @@ public class LoginActivity extends Activity implements OnTouchListener,
 	private void sendForGotpassWord(String URL) {
 		VolleyWrapper volleyWrapper=new VolleyWrapper(URL);
 		String[] name={"access_token","email","deviceid","devicetype"};
-		String[] value={PreferenceManager.getAccessToken(mContext),mMailEdtText.getText().toString(),FirebaseInstanceId.getInstance().getToken(),"2"};
+		String[] value={PreferenceManager.getAccessToken(mContext),mMailEdtText.getText().toString(),PreferenceManager.getFCMID(mContext),"2"};
 
 		//String[] value={PreferenceManager.getAccessToken(mContext),mStaffList.get(pos).getStaffEmail(),JTAG_USERS_ID_VALUE,text_dialog.getText().toString(),text_content.getText().toString()};
 		volleyWrapper.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {

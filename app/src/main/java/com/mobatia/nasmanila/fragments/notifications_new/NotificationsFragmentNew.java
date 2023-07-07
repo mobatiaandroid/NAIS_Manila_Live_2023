@@ -19,18 +19,12 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.notifications.AudioPlayerViewActivity;
 import com.mobatia.nasmanila.activities.notifications.ImageActivity;
 import com.mobatia.nasmanila.activities.notifications.TextalertActivity;
 import com.mobatia.nasmanila.activities.notifications.VideoWebViewActivity;
-import com.mobatia.nasmanila.activities.notificationssplitting.AudioPlayerViewActivityNew;
-import com.mobatia.nasmanila.activities.notificationssplitting.ImageActivityNew;
-import com.mobatia.nasmanila.activities.notificationssplitting.TextalertActivityNew;
-import com.mobatia.nasmanila.activities.notificationssplitting.VideoWebViewActivityNew;
 import com.mobatia.nasmanila.constants.CacheDIRConstants;
 import com.mobatia.nasmanila.constants.IntentPassValueConstants;
 import com.mobatia.nasmanila.constants.JSONConstants;
@@ -238,15 +232,15 @@ public class NotificationsFragmentNew extends Fragment implements
         try {
             final VolleyWrapper manager = new VolleyWrapper(URL);
             jtagAccesstoken = PreferenceManager.getAccessToken(mContext);
-            jtagDeviceid = FirebaseInstanceId.getInstance().getToken();
+            jtagDeviceid = PreferenceManager.getFCMID(mContext);
             jtagDevicetype = "2";
             notificationSize = 0;
-            Log.e("firbase", FirebaseInstanceId.getInstance().getToken());
+            Log.e("firbase", PreferenceManager.getFCMID(mContext));
             Log.e("userid", PreferenceManager.getUserId(mContext));
             jtagUsersId = PreferenceManager.getUserId(mContext);
             String[] name = {JTAG_ACCESSTOKEN, JTAG_DEVICE_iD, JTAG_DEVICE_tYPE, JTAG_USERS_ID, JTAG_PAGE_FROM, JTAG_SCROLL_TO};
-            String[] value = {PreferenceManager.getAccessToken(mContext), FirebaseInstanceId.getInstance().getToken(), jtagDevicetype, PreferenceManager.getUserId(mContext), page_from, scroll_to};
-            System.out.println("Notificationpassing:" + "A:" + PreferenceManager.getAccessToken(mContext) + "DID:" + FirebaseInstanceId.getInstance().getToken() + "DTYPE:" + jtagDevicetype + "UID:" + PreferenceManager.getUserId(mContext) + "PAGEFROM:" + page_from + "Scrollto:" + scroll_to);
+            String[] value = {PreferenceManager.getAccessToken(mContext), PreferenceManager.getFCMID(mContext), jtagDevicetype, PreferenceManager.getUserId(mContext), page_from, scroll_to};
+            System.out.println("Notificationpassing:" + "A:" + PreferenceManager.getAccessToken(mContext) + "DID:" + PreferenceManager.getFCMID(mContext) + "DTYPE:" + jtagDevicetype + "UID:" + PreferenceManager.getUserId(mContext) + "PAGEFROM:" + page_from + "Scrollto:" + scroll_to);
             manager.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
                 @Override
                 public void responseSuccess(String successResponse) {

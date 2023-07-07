@@ -17,9 +17,9 @@ public interface URLConstants {
 //Dev NAIS MANILA
 
 ////	public String POST_APITOKENURL="http://mobicare2.mobatia.com/nais_manila/oauth/access_token";
-//	public String POST_APITOKENURL="http://alpha.mobatia.in:808/nais_manila/oauth/access_token";
+	public String POST_APITOKENURL="http://alpha.mobatia.in:808/nais_manila/oauth/access_token";
 //////	public String URL_HEAD = "http://mobicare2.mobatia.com/nais_manila/api/";
-//	public String URL_HEAD = "http://alpha.mobatia.in:808/nais_manila/api";
+	public String URL_HEAD = "http://alpha.mobatia.in:808/nais_manila/api/";
 
 
 //	public String POST_APITOKENURL="http://manila.mobatia.in:8081/oauth/access_token";
@@ -27,8 +27,8 @@ public interface URLConstants {
 
 
 //Live NAIS MANILA
-	public String POST_APITOKENURL="https://cms.naismanila.edu.ph/nais_manila/oauth/access_token";
-    public String URL_HEAD = "https://cms.naismanila.edu.ph/nais_manila/api/";
+//	public String POST_APITOKENURL="https://cms.naismanila.edu.ph/nais_manila/oauth/access_token";
+//    public String URL_HEAD = "https://cms.naismanila.edu.ph/nais_manila/api/";
 
 	public String URL_ABOUTUS_LIST = URL_HEAD
 			+ "about_us";

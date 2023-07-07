@@ -43,6 +43,7 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/userImage"
                     android:hint="@string/username"
+                    android:textColorHint="@color/white"
                     android:layout_marginRight="8dp"
                     android:inputType="textEmailAddress"
                     android:singleLine="true" />
@@ -71,6 +72,8 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/passwordImage"
                     android:hint="@string/password"
+                    android:textColorHint="@color/white"
+
                     android:layout_marginRight="8dp"
                     android:inputType="textPassword"
                     android:singleLine="true" />

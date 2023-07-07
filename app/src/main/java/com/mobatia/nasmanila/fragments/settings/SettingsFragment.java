@@ -13,7 +13,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import androidx.fragment.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,7 +29,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import androidx.fragment.app.Fragment;
+
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.login.LoginActivity;
 import com.mobatia.nasmanila.activities.terms_of_service.TermsOfServiceActivity;
@@ -131,6 +132,10 @@ public class SettingsFragment extends Fragment implements OnItemClickListener,
      * Surendranath
      *****************************************************/
     private void initialiseUI() {
+        Log.e("Name",PreferenceManager.getFCMID(mContext));
+        Log.e("Name",PreferenceManager.getAccessToken(mContext));
+        Log.e("Name",PreferenceManager.getUserId(mContext));
+
         mTitleTextView = (TextView) mRootView.findViewById(R.id.titleTextView);
         versionText = (TextView) mRootView.findViewById(R.id.versionText);
         mSettingsList = (ListView) mRootView.findViewById(R.id.mSettingsListView);
@@ -374,13 +379,15 @@ public class SettingsFragment extends Fragment implements OnItemClickListener,
 
         );
         dialog.show();
-    }    private void callChangePasswordAPI(String URL) {
+    }
+    private void callChangePasswordAPI(String URL) {
+
         VolleyWrapper volleyWrapper = new VolleyWrapper(URL);
         String[] name = {"access_token", "users_id", "current_password", "new_password", "email", "deviceid", "devicetype"};
         String[] value = {PreferenceManager.getAccessToken(mContext), PreferenceManager.getUserId(mContext),
                 text_currentpswd.getText().toString(),
                 newpassword.getText().toString(), PreferenceManager.getUserEmail(mContext),
-                FirebaseInstanceId.getInstance().getToken(), "2"};
+                PreferenceManager.getFCMID(mContext), "2"};
 
         //String[] value={PreferenceManager.getAccessToken(mContext),mStaffList.get(pos).getStaffEmail(),JTAG_USERS_ID_VALUE,text_dialog.getText().toString(),text_content.getText().toString()};
         volleyWrapper.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
