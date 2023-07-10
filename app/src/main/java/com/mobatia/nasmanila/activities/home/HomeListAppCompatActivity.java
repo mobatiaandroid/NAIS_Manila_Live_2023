@@ -1,5 +1,10 @@
 package com.mobatia.nasmanila.activities.home;
 
+import static com.mobatia.nasmanila.constants.JSONConstants.JTAG_RESPONSE;
+import static com.mobatia.nasmanila.constants.JSONConstants.JTAG_RESPONSECODE;
+import static com.mobatia.nasmanila.constants.JSONConstants.JTAG_STATUSCODE;
+import static com.mobatia.nasmanila.constants.URLConstants.URL_GET_CALENDAR_LIST;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -76,6 +81,10 @@ import com.mobatia.nasmanila.fragments.social_media.SocialMediaFragment;
 import com.mobatia.nasmanila.manager.AppUtils;
 import com.mobatia.nasmanila.manager.PreferenceManager;
 import com.mobatia.nasmanila.sqliteservice.DatabaseHelper;
+import com.mobatia.nasmanila.volleywrappermanager.CustomDialog;
+import com.mobatia.nasmanila.volleywrappermanager.VolleyWrapper;
+
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -140,6 +149,7 @@ public class HomeListAppCompatActivity extends AppCompatActivity implements
         locationPermissionStatus = getSharedPreferences("locationPermissionStatus", MODE_PRIVATE);
 
         extras = getIntent().getExtras();
+        callCalendarAPI(URL_GET_CALENDAR_LIST);
         if (extras != null) {
             notificationRecieved = extras.getInt("Notification_Recieved", 0);
         }        /*Thread.setDefaultUncaughtExceptionHandler(new ExceptionHandler(this,
@@ -169,6 +179,75 @@ public class HomeListAppCompatActivity extends AppCompatActivity implements
         if (AppUtils.checkInternet(mContext)) {
 //            forceUpdate();
         }
+    }
+
+    private void callCalendarAPI(String urlGetCalendarList) {
+        VolleyWrapper volleyWrapper = new VolleyWrapper(urlGetCalendarList);
+        String[] name = {"access_token"};
+        String[] value = {PreferenceManager.getAccessToken(mContext)};
+        volleyWrapper.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
+            @Override
+            public void responseSuccess(String successResponse) {
+                System.out.println("The response is" + successResponse);
+                try {
+                    JSONObject obj = new JSONObject(successResponse);
+                    String response_code = obj.getString(JTAG_RESPONSECODE);
+                    if (response_code.equalsIgnoreCase("200")) {
+                        JSONObject secobj = obj.getJSONObject(JTAG_RESPONSE);
+                        String status_code = secobj.getString(JTAG_STATUSCODE);
+                        if (status_code.equalsIgnoreCase("303")) {
+
+                            String url = secobj.getString("calendar_url");
+                            if (url!=""){
+                                PreferenceManager.setCalendarURL(mContext,url);
+                            }
+                            Log.e("url",url.toString());
+
+                        }
+                    } else if (response_code.equalsIgnoreCase("500")) {
+                        AppUtils.showDialogAlertDismiss((Activity) mContext, "Alert", getString(R.string.common_error), R.drawable.exclamationicon, R.drawable.round);
+
+                    } else if (response_code.equalsIgnoreCase("400")) {
+                        AppUtils.getToken(mContext, new AppUtils.GetTokenSuccess() {
+                            @Override
+                            public void tokenrenewed() {
+                            }
+                        });
+                        callCalendarAPI(URL_GET_CALENDAR_LIST);
+
+                    } else if (response_code.equalsIgnoreCase("401")) {
+                        AppUtils.getToken(mContext, new AppUtils.GetTokenSuccess() {
+                            @Override
+                            public void tokenrenewed() {
+                            }
+                        });
+                        callCalendarAPI(URL_GET_CALENDAR_LIST);
+
+                    } else if (response_code.equalsIgnoreCase("402")) {
+                        AppUtils.getToken(mContext, new AppUtils.GetTokenSuccess() {
+                            @Override
+                            public void tokenrenewed() {
+                            }
+                        });
+                        callCalendarAPI(URL_GET_CALENDAR_LIST);
+
+                    } else {
+                        CustomDialog dialog = new CustomDialog(mContext, getResources().getString(R.string.common_error)
+                                , getResources().getString(R.string.ok));
+                        dialog.show();
+                    }
+                } catch (Exception ex) {
+                    System.out.println("The Exception in edit profile is" + ex.toString());
+                }
+
+            }
+
+            @Override
+            public void responseFailure(String failureResponse) {
+                AppUtils.showDialogAlertDismiss((Activity) mContext, "Alert", getString(R.string.common_error), R.drawable.exclamationicon, R.drawable.round);
+
+            }
+        });
     }
 
     /*******************************************************

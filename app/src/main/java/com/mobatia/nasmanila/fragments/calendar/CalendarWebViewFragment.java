@@ -31,10 +31,6 @@ import com.mobatia.nasmanila.constants.StatusConstants;
 import com.mobatia.nasmanila.constants.URLConstants;
 import com.mobatia.nasmanila.manager.AppUtils;
 import com.mobatia.nasmanila.manager.PreferenceManager;
-import com.mobatia.nasmanila.volleywrappermanager.CustomDialog;
-import com.mobatia.nasmanila.volleywrappermanager.VolleyWrapper;
-
-import org.json.JSONObject;
 
 /**
  * Created by krishnaraj on 07/11/18.
@@ -97,8 +93,7 @@ public class CalendarWebViewFragment extends Fragment implements
 
 
     private void initialiseUI() {
-        mLoadUrl = "https://www.nordangliaeducation.com/our-schools/philippines/manila/international/news-and-insights/school-calendar";
-        callCalendarAPI(URLConstants.URL_GET_CALENDAR_LIST);
+        mLoadUrl = PreferenceManager.getCalendarURL(mContext);
         relMain = (RelativeLayout) mRootView.findViewById(R.id.relMain);
         mWebView = (WebView)  mRootView.findViewById(R.id.webView);
         mTitleTextView = mRootView.findViewById(R.id.titleTextView);
@@ -113,71 +108,6 @@ public class CalendarWebViewFragment extends Fragment implements
 
     }
 
-    private void callCalendarAPI(String urlGetCalendarList) {
-        VolleyWrapper volleyWrapper = new VolleyWrapper(urlGetCalendarList);
-        String[] name = {"access_token"};
-        String[] value = {PreferenceManager.getAccessToken(mContext)};
-        volleyWrapper.getResponsePOST(mContext, 11, name, value, new VolleyWrapper.ResponseListener() {
-            @Override
-            public void responseSuccess(String successResponse) {
-                System.out.println("The response is" + successResponse);
-                try {
-                    JSONObject obj = new JSONObject(successResponse);
-                    String response_code = obj.getString(JTAG_RESPONSECODE);
-                    if (response_code.equalsIgnoreCase("200")) {
-                        JSONObject secobj = obj.getJSONObject(JTAG_RESPONSE);
-                        String status_code = secobj.getString(JTAG_STATUSCODE);
-                        if (status_code.equalsIgnoreCase("303")) {
-                            JSONObject data = secobj.getJSONObject(JTAG_RESPONSE_DATA_ARRAY);
-                            mLoadUrl = data.getString(JTAG_EVENT_LATITUDE);
-
-
-                        }
-                    } else if (response_code.equalsIgnoreCase("500")) {
-                        AppUtils.showDialogAlertDismiss((Activity) mContext, "Alert", getString(R.string.common_error), R.drawable.exclamationicon, R.drawable.round);
-
-                    } else if (response_code.equalsIgnoreCase("400")) {
-                        AppUtils.getToken(mContext, new AppUtils.GetTokenSuccess() {
-                            @Override
-                            public void tokenrenewed() {
-                            }
-                        });
-                        callCalendarAPI(URL_GET_CALENDAR_LIST);
-
-                    } else if (response_code.equalsIgnoreCase("401")) {
-                        AppUtils.getToken(mContext, new AppUtils.GetTokenSuccess() {
-                            @Override
-                            public void tokenrenewed() {
-                            }
-                        });
-                        callCalendarAPI(URL_GET_CALENDAR_LIST);
-
-                    } else if (response_code.equalsIgnoreCase("402")) {
-                        AppUtils.getToken(mContext, new AppUtils.GetTokenSuccess() {
-                            @Override
-                            public void tokenrenewed() {
-                            }
-                        });
-                        callCalendarAPI(URL_GET_CALENDAR_LIST);
-
-                    } else {
-                        CustomDialog dialog = new CustomDialog(mContext, getResources().getString(R.string.common_error)
-                                , getResources().getString(R.string.ok));
-                        dialog.show();
-                    }
-                } catch (Exception ex) {
-                    System.out.println("The Exception in edit profile is" + ex.toString());
-                }
-
-            }
-
-            @Override
-            public void responseFailure(String failureResponse) {
-                AppUtils.showDialogAlertDismiss((Activity) mContext, "Alert", getString(R.string.common_error), R.drawable.exclamationicon, R.drawable.round);
-
-            }
-        });
-    }
 
     @Override
     public void onClick(View v) {

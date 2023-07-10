@@ -1799,6 +1799,18 @@ public class PreferenceManager implements NaisTabConstants {
         return prefs.getString("version_api", "");
     }
 
+    public static void setCalendarURL(Context context, String result) {
+        SharedPreferences prefs = context.getSharedPreferences(SHARED_PREF_NAS,
+                Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("calendar", result);
+        editor.commit();
+    }
 
+    public static String getCalendarURL(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(SHARED_PREF_NAS,
+                Context.MODE_PRIVATE);
+        return prefs.getString("calendar", "");
+    }
 }
 

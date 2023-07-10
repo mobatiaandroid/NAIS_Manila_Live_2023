@@ -232,7 +232,7 @@ public class CategoryMainFragment extends Fragment implements
                             if (text_dialog.getText().equals("")) {
                                 AppUtils.showDialogAlertDismiss((Activity) mContext, mContext.getString(R.string.alert_heading), "Please enter  subject", R.drawable.exclamationicon, R.drawable.round);
 
-                            } else if (text_content.geztText().toString().equals("")) {
+                            } else if (text_content.getText().toString().equals("")) {
                                 AppUtils.showDialogAlertDismiss((Activity) mContext, mContext.getString(R.string.alert_heading), "Please enter  content", R.drawable.exclamationicon, R.drawable.round);
 
                             } else {
