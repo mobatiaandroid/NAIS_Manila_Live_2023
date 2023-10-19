@@ -100,6 +100,8 @@ public class FullscreenWebViewActivityNoHeader extends Activity implements
         mWebView.setFocusableInTouchMode(true);
         mWebView.setBackgroundColor(0X00000000);
         mWebView.setVerticalScrollBarEnabled(false);
+        String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3";
+        mWebView.getSettings().setUserAgentString(userAgent);
         mWebView.setHorizontalScrollBarEnabled(false);
         mWebView.setWebChromeClient(new WebChromeClient());
 //        int sdk = Build.VERSION.SDK_INT;
@@ -119,11 +121,11 @@ public class FullscreenWebViewActivityNoHeader extends Activity implements
         mwebSettings.setDefaultTextEncodingName("utf-8");
         mwebSettings.setLoadsImagesAutomatically(true);
 
-        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        mWebView.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        mWebView.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         mWebView.getSettings().setAllowFileAccess(true);
-        mWebView.getSettings().setAppCacheEnabled(true);
+//        mWebView.getSettings().setAppCacheEnabled(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);

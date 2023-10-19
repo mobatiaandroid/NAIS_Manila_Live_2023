@@ -8,21 +8,17 @@
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
         <option name="RES_FOLDERS_RELATIVE_PATH" value="" />
-        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../ijkplayer-java/src/androidTest/res;file://$MODULE_DIR$/../../../ijkplayer-java/src/androidTestDebug/res;file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/res/resValues/androidTest/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../ijkplayer-java/src/androidTest/res;file://$MODULE_DIR$/../../../ijkplayer-java/src/androidTestDebug/res;file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/res/resValues/androidTest/debug" />
         <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
         <option name="PROJECT_TYPE" value="1" />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../ijkplayer-java/build/intermediates/javac/debug/classes" />
-    <output-test url="file://$MODULE_DIR$/../../../ijkplayer-java/build/intermediates/javac/debugUnitTest/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../ijkplayer-java/build/intermediates/javac/debugAndroidTest/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/aidl_source_output_dir/debugAndroidTest/out" />
     <content url="file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/ap_generated_sources/debugAndroidTest/out" />
-    <content url="file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/renderscript_source_output_dir/debugAndroidTest/out" />
     <content url="file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/res/resValues/androidTest/debug" />
-    <content url="file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/res/rs/androidTest/debug" />
     <content url="file://$MODULE_DIR$/../../../ijkplayer-java/build/generated/source/buildConfig/androidTest/debug" />
     <content url="file://$MODULE_DIR$/../../../ijkplayer-java/src/androidTest">
       <sourceFolder url="file://$MODULE_DIR$/../../../ijkplayer-java/src/androidTest/java" isTestSource="true" />

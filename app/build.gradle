@@ -1,27 +1,22 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion '29.0.3'
+    compileSdk 33
+
 
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
         applicationId "com.mobatia.nasmanila"
         minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 17
-        versionName "1.0"//2.6
+        targetSdkVersion 33
+        versionCode 19
+        versionName "2.8"
         multiDexEnabled true
         generatedDensities = []
     }
-    lintOptions
-            {
-                checkReleaseBuilds false
-            }
 
     dexOptions {
         javaMaxHeapSize "4g" //specify the heap size for the dex process
@@ -33,10 +28,11 @@ android {
                     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
                 }
             }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    namespace 'com.mobatia.nasmanila'
+    lint {
+        checkReleaseBuilds false
     }
+
 }
 
 dependencies {

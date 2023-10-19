@@ -126,14 +126,11 @@ public CustomSettingsAdapter(Context context,
 
 				}
 			} else {
-				if (position==5)
-				{
+				if (position == 6) {
 					mTxtUser.setVisibility(View.VISIBLE);
 					mTitleTxt.setText(mSettingsList.get(position).toString());
-					mTxtUser.setText("("+PreferenceManager.getUserEmail(mContext)+")");
-				}
-				else
-				{
+					mTxtUser.setText("(" + PreferenceManager.getUserEmail(mContext) + ")");
+				} else {
 					RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) mTitleTxt.getLayoutParams();
 					lp.addRule(RelativeLayout.CENTER_VERTICAL);
 					mTitleTxt.setLayoutParams(lp);

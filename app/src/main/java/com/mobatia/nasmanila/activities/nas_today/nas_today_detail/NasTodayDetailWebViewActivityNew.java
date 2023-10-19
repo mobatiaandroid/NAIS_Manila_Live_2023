@@ -1,7 +1,5 @@
 package com.mobatia.nasmanila.activities.nas_today.nas_today_detail;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,10 +16,11 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import com.mobatia.nasmanila.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.home.HomeListAppCompatActivity;
-import com.mobatia.nasmanila.activities.notifications.ImageActivity;
 import com.mobatia.nasmanila.manager.AppUtils;
 import com.mobatia.nasmanila.manager.HeaderManager;
 
@@ -122,11 +121,11 @@ public class NasTodayDetailWebViewActivityNew extends AppCompatActivity {
         mwebSettings.setDefaultTextEncodingName("utf-8");
         mwebSettings.setLoadsImagesAutomatically(true);
 
-        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        mWebView.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        mWebView.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         mWebView.getSettings().setAllowFileAccess(true);
-        mWebView.getSettings().setAppCacheEnabled(true);
+//        mWebView.getSettings().setAppCacheEnabled(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);

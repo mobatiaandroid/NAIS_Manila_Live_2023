@@ -3,13 +3,10 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
     }
     buildTypes {
         release {
@@ -17,11 +14,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'tcking.github.com.giraffeplayer'
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'androidx.appcompat:appcompat:1.0.0'
-    compile project(':ijkplayer-java')
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation project(':ijkplayer-java')
 }

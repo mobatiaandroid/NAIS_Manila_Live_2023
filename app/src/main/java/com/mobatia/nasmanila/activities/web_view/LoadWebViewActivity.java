@@ -225,15 +225,14 @@ public class LoadWebViewActivity extends Activity implements URLConstants,JSONCo
         mwebSettings.setDefaultTextEncodingName("utf-8");
         mwebSettings.setLoadsImagesAutomatically(true);
 
-        web.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        web.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        web.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        web.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         web.getSettings().setAllowFileAccess(true);
-        web.getSettings().setAppCacheEnabled(true);
+//        web.getSettings().setAppCacheEnabled(true);
         web.getSettings().setJavaScriptEnabled(true);
         web.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
-
 
 
         web.setWebViewClient(new WebViewClient() {

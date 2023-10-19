@@ -1,7 +1,6 @@
 package com.mobatia.nasmanila.activities.pdf;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -20,7 +19,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.constants.CacheDIRConstants;
@@ -127,11 +125,11 @@ public class PdfReaderActivity extends Activity implements
         mwebSettings.setAllowContentAccess(true);
         mwebSettings.setAllowFileAccessFromFileURLs(true);
 
-        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        mWebView.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        mWebView.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         mWebView.getSettings().setAllowFileAccess(true);
-        mWebView.getSettings().setAppCacheEnabled(true);
+//        mWebView.getSettings().setAppCacheEnabled(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);

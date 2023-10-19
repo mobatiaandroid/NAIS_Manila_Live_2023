@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.net.Uri;
-import android.net.http.SslError;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
@@ -15,14 +14,11 @@ import android.print.PrintManager;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
-import android.webkit.SslErrorHandler;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -112,11 +108,11 @@ public class PdfViewActivityNew extends AppCompatActivity {
         mwebSettings.setDefaultTextEncodingName("utf-8");
         mwebSettings.setLoadsImagesAutomatically(true);
 
-        webView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        webView.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        webView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        webView.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         webView.getSettings().setAllowFileAccess(true);
-        webView.getSettings().setAppCacheEnabled(true);
+//        webView.getSettings().setAppCacheEnabled(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);

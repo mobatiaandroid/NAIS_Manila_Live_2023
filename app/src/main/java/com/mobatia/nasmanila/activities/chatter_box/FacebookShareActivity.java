@@ -47,7 +47,7 @@ public class FacebookShareActivity extends Activity {
         //    mContainer = (We) findViewById(R.id.webview);
         WebSettings webSettings = mWebview.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webSettings.setAppCacheEnabled(true);
+//        webSettings.setAppCacheEnabled(true);
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setSupportMultipleWindows(true);
         mWebview.setWebViewClient(new UriWebViewClient());

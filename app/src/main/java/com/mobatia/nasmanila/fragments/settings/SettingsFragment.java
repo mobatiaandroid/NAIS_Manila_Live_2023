@@ -87,6 +87,7 @@ public class SettingsFragment extends Fragment implements OnItemClickListener,
             add("Email Us");
             add("Tutorial");
             add("Change Password");
+            add("Delete My Account");
             add("Logout");
         }
     };
@@ -214,17 +215,25 @@ public class SettingsFragment extends Fragment implements OnItemClickListener,
                     break;
 
                 case 4://change password
-                    if(AppUtils.isNetworkConnected(mContext)){
+                    if (AppUtils.isNetworkConnected(mContext)) {
                         showChangePasswordAlert();
-                    }else{
+                    } else {
                         AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);
 
                     }
                     break;
                 case 5:
-                    if(AppUtils.isNetworkConnected(mContext)){
+                    if (AppUtils.isNetworkConnected(mContext)) {
+                        AppUtils.showDialogAlertLogout(getActivity(), "Confirm?", "Do you want to delete your account?", R.drawable.questionmark_icon, R.drawable.round);
+                    } else {
+                        AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);
+
+                    }
+                    break;
+                case 6:
+                    if (AppUtils.isNetworkConnected(mContext)) {
                         AppUtils.showDialogAlertLogout(getActivity(), "Confirm?", "Do you want to Logout?", R.drawable.questionmark_icon, R.drawable.round);
-                    }else{
+                    } else {
                         AppUtils.showDialogAlertDismiss((Activity) mContext, "Network Error", getString(R.string.no_internet), R.drawable.nonetworkicon, R.drawable.roundred);
 
                     }

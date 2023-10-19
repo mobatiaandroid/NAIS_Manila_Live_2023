@@ -5,5 +5,6 @@
         <domain includeSubdomains="true">cms.naismanila.edu.ph</domain>
         <domain includeSubdomains="true">192.168.0.194</domain>
         <domain includeSubdomains="true">alpha.mobatia.in</domain>
+        <domain includeSubdomains="true">gama.mobatia.in</domain>
     </domain-config>
 </network-security-config>

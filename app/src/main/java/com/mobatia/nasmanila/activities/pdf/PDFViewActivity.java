@@ -28,7 +28,6 @@ import com.github.barteksc.pdfviewer.PDFView;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.mobatia.nasmanila.R;
-import com.mobatia.nasmanila.activities.pdf.pdfviewer.PdfViewerActivity;
 import com.mobatia.nasmanila.manager.AppUtils;
 import com.mobatia.nasmanila.manager.HeaderManager;
 

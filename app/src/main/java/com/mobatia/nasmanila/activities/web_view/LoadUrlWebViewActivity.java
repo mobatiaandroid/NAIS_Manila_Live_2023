@@ -14,7 +14,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.home.HomeListAppCompatActivity;
@@ -132,11 +131,11 @@ public class LoadUrlWebViewActivity extends Activity implements
         mwebSettings.setDefaultTextEncodingName("utf-8");
         mwebSettings.setLoadsImagesAutomatically(true);
 
-        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        mWebView.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        mWebView.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         mWebView.getSettings().setAllowFileAccess(true);
-        mWebView.getSettings().setAppCacheEnabled(true);
+//        mWebView.getSettings().setAppCacheEnabled(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);

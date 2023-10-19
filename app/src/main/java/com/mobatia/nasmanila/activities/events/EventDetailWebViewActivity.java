@@ -19,7 +19,6 @@ import android.widget.RelativeLayout;
 import com.mobatia.nasmanila.R;
 import com.mobatia.nasmanila.activities.home.HomeListAppCompatActivity;
 import com.mobatia.nasmanila.activities.pdf.PDFViewActivity;
-import com.mobatia.nasmanila.activities.pdf.PdfViewActivityNew;
 import com.mobatia.nasmanila.constants.CacheDIRConstants;
 import com.mobatia.nasmanila.constants.NaisClassNameConstants;
 import com.mobatia.nasmanila.manager.AppUtils;
@@ -192,11 +191,11 @@ public class EventDetailWebViewActivity extends Activity implements
         mwebSettings.setDefaultTextEncodingName("utf-8");
         mwebSettings.setLoadsImagesAutomatically(true);
 
-        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
-        mWebView.getSettings().setAppCachePath(
-                mContext.getCacheDir().getAbsolutePath());
+//        mWebView.getSettings().setAppCacheMaxSize(10 * 1024 * 1024); // 5MB
+//        mWebView.getSettings().setAppCachePath(
+//                mContext.getCacheDir().getAbsolutePath());
         mWebView.getSettings().setAllowFileAccess(true);
-        mWebView.getSettings().setAppCacheEnabled(true);
+//        mWebView.getSettings().setAppCacheEnabled(true);
         mWebView.getSettings().setJavaScriptEnabled(true);
         mWebView.getSettings()
                 .setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
